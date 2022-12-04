@@ -4,12 +4,16 @@
     padding: 2px;
 }
 
-.event{ 
-    margin: 0;
-    width: 50px;
-    height: 50px;
-    border: 2px, black;
-
+#timetable { 
+	position: relative;
+	top: 50px;
+	outline: 3px solid black;
+	font-size: 0;
+	margin: auto;
+	height: 800px;
+	width: 800px;
+	padding: 0;
+	border: none;
 }
 
 .dropbtn {
@@ -61,3 +65,11 @@
     border-collapse: collapse;
   }
   
+.event {
+    /*As planned, we should have a small margin between boxes*/
+	margin: 2px;
+	padding: 0;
+	border: none;
+	outline: 1px solid black;
+	display: inline-block;
+}
