@@ -10,11 +10,29 @@
 </head>
 <body>
 
-    <div class="timeslot"><!--relegating timeslots to 1 hour now-->
+    <!--This will allow the user to click and make changes on set divs-->
+    <button onclick="editButton()">Edit
+    </button>
+
+    <!-- The js will take care of generating the boxes,
+        this will remain here to show what each box
+        should functionally turn out to be.
+
+        What is needed is to ensure the css
+        doesn't misorder the divs inside the timetable
+        -->
+
+    <div class="timeslot">
         <p id="event">
     </div>
+    
+    
     <nav class="dropdown">
-        <button class="dropbtn">Calendar   Menu</button>
+        <button class="dropbtn">Calendar Menu</button>
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
           <a href="#">Times</a>
           <a href="#">Schedule Events</a>
@@ -140,6 +158,10 @@
             </div>
         </table>
       </div>
+
+    
+
+
 </body>
 
 </html>
