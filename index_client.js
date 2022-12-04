@@ -4,14 +4,14 @@ var boxNumber = 1;
 
 
 var start = new Date();
-var url = "http://localhost:3001";
+var url = "http://localhost:3001/post";
 
 //what else do I need here?
 window.onload = function() {
 
     //loads the timetable and the side menu bars
     loadScreen(); 
-
+    
     //Adjusts the height of the next slot by how many append the current one
     //var boxHeight = parseInt($(".timeslot").css("height"));
     //Adjusts (WHAT)
