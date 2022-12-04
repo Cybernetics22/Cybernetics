@@ -15,9 +15,10 @@
 .dropbtn {
     background-color: #ff7300;
     color: white;
-    padding: 16px;
+    padding: 15px;
     font-size: 16px;
     border: none;
+    border-radius: 5%;
   }
   
   
@@ -54,10 +55,30 @@
   #headings .timeslot{
     font-family: Arial, Helvetica, sans-serif;
   }
-  table, th, td, tr{
+  table, td, tr{
     border: 1px solid;
     border-color: #ff7300;
-    padding: 10px;
+    padding: 30px;
     border-collapse: collapse;
+    font-size: small;
+    background-color: #fff8f1;
   }
+  table{
+    margin-left: 200px;
+    margin-top: 40px;
+  }
+  nav{
+    border: 1px solid;
+    border-radius: 2%;
+    width: 180px; height: 878px;
+    float: left;
+    border-color: #ff7300;
+  }
+  th{
+    background-color: #ff7300;
+    border-radius: 3%;
+    padding: 30px;
+  }
+
+
   
