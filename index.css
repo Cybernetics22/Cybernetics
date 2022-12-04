@@ -13,7 +13,7 @@
 }
 
 .dropbtn {
-    background-color: #04AA6D;
+    background-color: #ff7300;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -50,3 +50,14 @@
   
   
   .dropdown:hover .dropbtn {background-color: #ff7300;}
+
+  #headings .timeslot{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  table, th, td, tr{
+    border: 1px solid;
+    border-color: #ff7300;
+    padding: 10px;
+    border-collapse: collapse;
+  }
+  
