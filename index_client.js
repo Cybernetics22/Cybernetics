@@ -4,7 +4,7 @@ var boxNumber = 1;
 
 
 var start = new Date();
-var url = "http:localhost:3001";
+var url = "http://localhost:3001";
 
 //what else do I need here?
 window.onload = function() {
@@ -49,7 +49,7 @@ function loadScreen(){
             var slotTime = j;
 
             $.post(url+'?data='+JSON.stringify({
-                    'action': slotInfo,
+                    'action': "slotInfo",
                     'day': slotDay,
                     'time': slotTime,
                     'id': boxNumber
@@ -101,13 +101,13 @@ function editButton(){
         default: break;
     }
 
-    /* Unnecessary
+    
     for (let i = 0; i < dayWeek; i++){
         for(let j = 0; j < dayTime; j++){
             idEdit++;
         }
     }
-    */
+    
 
     var desc = prompt("Enter the description of the event: ");
     document.getElementById("#event"+ slot).innerHTML = desc;
@@ -115,7 +115,7 @@ function editButton(){
     $.post(
         url+'?data='+JSON.stringify({
             'action':'edit',
-            //'id': idEdit,
+            'id': idEdit,
             'day': dayWeek,
             'time': dayTime,
             'desc': desc 
