@@ -5,11 +5,11 @@ var box_initial_top;
 
 window.onload = function() {
 
-    //loads the time slots and the side menu bars
+    //loads the timetable and the side menu bars
     loadScreen(); 
 
     //Adjusts the height of the next slot by how many append the current one
-    var boxHeight = parseInt($(".timeslot").css("height"));
+    //var boxHeight = parseInt($(".timeslot").css("height"));
     //Adjusts (WHAT)
     
 
@@ -18,10 +18,11 @@ window.onload = function() {
     //set sidemenu
 }
 
+//Loads the screen and assigns times to each div
 function loadScreen(){
 
     //create the divs for the timeSlots (by row by row; imbedded loop)
-    for (var i = 0; i < 14; i++){ //7:00 to 11:00 (nice)
+    for (var i = 7; i < 23; i++){ //7:00 to 11:00 (nice)
         for (var j = 0; j < 7; j++) {
 
             //create div each run in loop
@@ -32,7 +33,8 @@ function loadScreen(){
             //assign class
             $(newDiv).attr("class", "event");
 
-
+            var slotTime = "#event" + i;
+            var time = JSON.stringify({slotTime});
 
             //append divs to timetable screen div
             $("#timetable").append(newDiv);
@@ -40,8 +42,25 @@ function loadScreen(){
 
     }
     
+    //for the edit button
+    editButton();
+
+
+    //make the div box clickable to edit to timeSlot class
+    $(".timeSlot").click(editSlot());
+
 }
 
+//Edits the flag 'edit' to edit timeslots
+function editButton(){
+
+
+}
+
+//gives the user an option to change the background color
+function backgroundColor(){
+
+}
 
 // Initialize the timetable and sidemenu
 /* What on earth did I try and write here, 
@@ -65,5 +84,14 @@ function response(){
 //handle the response to editing a slot
 function editSlot(){
 
+    var eventID = id
+
+    if (edit == true){
+        var a = prompt("Enter the description of the event: ");
+        document.getElementById("#event"+ slot).innerHTML = a;
+    }
+    else{
+
+    }
 
 }
