@@ -39,10 +39,10 @@ function loadScreen(){
             $(newDiv).attr("class", "event");
 
             /* I made a mistake, we dont need a span
-            var newSpan = document.createElement("span");
-            var newId = "event" + i + 1;
-            $(newSpan).attr("id", newId);
-            $(newSpan).attr("class", "slotBox");
+            var newP = document.createElement("p");
+            var newId = i + 1;
+            $(newP).attr("p", newP);
+            $(newP).attr("class", "text");
             */
 
             var slotDay = i;
@@ -90,13 +90,24 @@ function editButton(){
     //Assume that they would type in military time for now, with out the :00
     var dayTime = prompt("For which time would you like to add an event: ");
 
-    for (let i = 0; i < 16; i++){
-        for(let j =0; i< 7;i++){
-
-
-        }
+    switch (day){
+        case "Sunday": dayWeek = 0; break;
+        case "Monday": dayWeek = 1; break;
+        case "Tuesday": dayWeek = 2; break;
+        case "Wednesday": dayWeek = 3; break;
+        case "Thursday": dayWeek = 4; break;
+        case "Friday": dayWeek = 5; break;
+        case "Saturday": dayWeek = 6; break;
+        default: break;
     }
 
+    /* Unnecessary
+    for (let i = 0; i < dayWeek; i++){
+        for(let j = 0; j < dayTime; j++){
+            idEdit++;
+        }
+    }
+    */
 
     var desc = prompt("Enter the description of the event: ");
     document.getElementById("#event"+ slot).innerHTML = desc;
@@ -104,7 +115,8 @@ function editButton(){
     $.post(
         url+'?data='+JSON.stringify({
             'action':'edit',
-            'id': idEdit,
+            //'id': idEdit,
+            'day': dayWeek,
             'time': dayTime,
             'desc': desc 
         }),

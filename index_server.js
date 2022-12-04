@@ -5,9 +5,8 @@
 */
 
 //empty js object to store information for later
-//var data = {};
+var data = {};
 
-const slotTime = [];
 const slotId = [];
 
 var express = require('express');
@@ -28,15 +27,16 @@ app.post('/post', (req, res) => {
     //assigns each slot a time and day
     if (z['action'] == 'slotInfo') {
 
-        slotId.push(z['id']);
+        slotId.push(z['id']) = new Array(2);
         //id 1 is in the first arrayslot 0
-        slotId[z['id']- 1] = [z['day'], z['time']]; 
+        slotId[z['id']- 1] = (z['day'], z['time']); 
 
 
     } 
     else if (z['action']== 'edit'){
 
-        slotTime[z['id'] + 1] = z['time'];
+        slotId[z['id']][0] = z['time'];
+        slotId[z['id']][1] = z['desc'];
 
     }
     else {
