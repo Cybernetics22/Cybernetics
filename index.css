@@ -14,7 +14,7 @@
 
 .dropbtn {
     background-color: #4e002b;
-    color: white;
+    color: #ffd2eb;
     padding: 15px;
     font-size: 16px;
     border: none;
@@ -62,10 +62,11 @@
     background-color: #ffd2eb;
   }
   table{
+    
   }
 
   nav{
-    border: 1px solid;
+    border: 1px solid, #ffd2eb;
     width: 180px; height: 875px;
     float: left;
     background-color: #4e002b;
