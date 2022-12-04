@@ -3,6 +3,10 @@ var level = 0;
 var box_initial_top;
 
 
+var start = new Date();
+var url = "http:localhost:3001";
+
+
 window.onload = function() {
 
     //loads the timetable and the side menu bars
@@ -33,7 +37,13 @@ function loadScreen(){
             //assign class
             $(newDiv).attr("class", "event");
 
-            var slotTime = "#event" + i;
+            //create a span, set its id & class
+            var newSpan = document.createElement("span");
+            $(newSpan).attr("id", "event" + i + 1);
+            $(newSpan).attr("class", "slotBox");
+
+
+            var slotTime = "#event" + j + 1; //becomes #event1
             var time = JSON.stringify({slotTime});
 
             //append divs to timetable screen div
@@ -46,8 +56,8 @@ function loadScreen(){
     editButton();
 
 
-    //make the div box clickable to edit to timeSlot class
-    $(".timeSlot").click(editSlot());
+    //make the span box clickable to edit to timeSlot class
+    $(".slotBox").click(editSlot());
 
 }
 
@@ -77,6 +87,8 @@ function initScreen(){
 
 // Event handle the server response
 function response(){
+    var response = JSON.parse(data);
+    console.log(data);
 
 
 }
@@ -84,7 +96,7 @@ function response(){
 //handle the response to editing a slot
 function editSlot(){
 
-    var eventID = id
+    var eventID = id;
 
     if (edit == true){
         var a = prompt("Enter the description of the event: ");
