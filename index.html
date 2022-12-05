@@ -11,7 +11,7 @@
 <body>
 
     <!--This will allow the user to click and make changes on set divs-->
-    <button onclick="editButton()">Edit
+    <button onclick="editButton()" id="edit">Edit Schedule
     </button>
 
     <!-- The js will take care of generating the boxes,
@@ -28,31 +28,30 @@
     
     
     <nav class="dropdown">
-        <button class="dropbtn">Calendar Menu</button>
-
-
-    <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-          <a href="#">Times</a>
-          <a href="#">Schedule Events</a>
-          <a href="#">Dates</a>
-          <a href="#">Remove Items</a>
-          <a href="#">Settings</a>
-          <a href="#">Themes</a>
-        </div>
+       <div class="dropdown">
+          <button class="dropbtn">Calendar Menu</button>
+            <div class="dropdown-content">
+                    <a href="#">Times</a>
+                    <a href="#">Schedule Events</a>
+                    <a href="#">Dates</a>
+                    <a href="#">Remove Items</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Themes</a>
+            </div>
     </nav>
+
+
       <div class="Table">
-        <table class="xy">
+        <table>
             <tr id="headings">
                 <th></th>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
+                <th>Sun <sup>4</sup> </th>
+                <th>Mon <sup>5</sup></th>
+                <th>Tue <sup>6</sup></th>
+                <th>Wed <sup>7</sup></th>
+                <th>Thu <sup>8</sup></th>
+                <th>Fri <sup>9</sup></th>
+                <th>Sat <sup>10</sup></th>
             </tr>
             <div class="timeslot">
             <tr>
