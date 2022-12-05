@@ -65,13 +65,10 @@
     font-size: small;
     background-color: #ffd2eb;
   }
-  table{
-    
-  }
 
   nav{
     border: 1px solid, #ffd2eb;
-    width: 180px; height: 880px;
+    width: 180px; height: 876px;
     float: left;
     background-color: #4e002b;
   }
@@ -96,4 +93,8 @@ sup{
 	border: none;
 	outline: 1px solid black;
 	display: inline-block;
+}
+#edit {
+    border-color: #4e002b;
+    border-radius: 10px;
 }
