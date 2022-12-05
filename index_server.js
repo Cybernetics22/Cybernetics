@@ -1,7 +1,6 @@
 /*General purpose of the server:
 1. To remind the user ahead of time when the event time
     draws nearer.
-2. Read the client request to edit the divs.
 */
 
 //empty js object to store information for later
@@ -9,9 +8,10 @@ var data = {};
 
 const slotId = [];
 
+const schedule = require('node-schedule');
+
 var express = require('express');
 var app = express();
-
 var port = 3001;
 
 //where to use .append?
@@ -25,18 +25,14 @@ app.post('/post', (req, res) => {
     var z = JSON.parse(req.query['data']);
 
     //assigns each slot a time and day
-    if (z['action'] == 'slotInfo') {
+    if (z['action']== 'edit'){
+        var hourNum = parseInt(z['time']) ;
 
-        slotId.push(z['id']) = new Array(2);
-        //id 1 is in the first arrayslot 0
-        slotId[z['id']- 1] = (z['day'], z['time']); 
+        const job = schedule.scheduleJob({hour: (hourNum == 0 ? 24: hourNum) - 1, minute: 50, dayOfWeek: z['day']}, function(){
+            console.log('Reminder for your event scheduled for ' + z['nameDay'] + ', ' + z['time'] + ':00 ! \n Description: ' + z['desc']);
+          });
 
-
-    } 
-    else if (z['action']== 'edit'){
-
-        slotId[z['id']][0] = z['time'];
-        slotId[z['id']][1] = z['desc'];
+        res.send(JSON.stringify({ 'msg': 'Date Edited! Date: ' + Date }));
 
     }
     else {

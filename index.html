@@ -1,3 +1,15 @@
+<!--Instructions:
+
+1. Run the server
+2. Press edit to make an event
+3. Press Background button to change color
+4. Once event date and time is nearing (10mins before),
+    the program's console will tell the user that it is time.
+
+-->
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css" title="style" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="index_client.js"></script>
     <title>Rimox</title> <!--Rimox is our project's name; try not to forget it-->
 </head>
@@ -13,34 +26,12 @@
     <!--This will allow the user to click and make changes on set divs-->
     <button onclick="editButton()">Edit
     </button>
+    <button onclick="backgroundColorButton()">Change Background Color
+    </button>
 
-    <!-- The js will take care of generating the boxes,
-        this will remain here to show what each box
-        should functionally turn out to be.
-
-        What is needed is to ensure the css
-        doesn't misorder the divs inside the timetable
-
-    <div class="timeslot">
-        <p id="event">
-    </div>
-    -->
-
-
-    <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-          <a href="#">Times</a>
-          <a href="#">Schedule Events</a>
-          <a href="#">Dates</a>
-          <a href="#">Remove Items</a>
-          <a href="#">Settings</a>
-          <a href="#">Themes</a>
-        </div>
-      </div>
       <div class="Table">
-        <table class="xy">
-            <tr id="headings">
+        <table id="eventTable" class="timeslot xy">
+            <tbody><tr id="headings">
                 <th></th>
                 <th>Sunday</th>
                 <th>Monday</th>
@@ -50,21 +41,7 @@
                 <th>Friday</th>
                 <th>Saturday</th>
             </tr>
-            <div class="timeslot">
-                <tr><td>00:00</td></tr>
-            <tr><td>01:00</td></tr>
-            <tr><td>02:00</td></tr>
-            <tr><td>03:00</td></tr>
-            <tr><td>04:00</td></tr>
-            <tr><td>05:00</td></tr>
-            <tr><td>06:00</td></tr>
-            <tr><td>07:00</td></tr>
-            <tr><td>08:00</td></tr>
-            <tr><td>09:00</td></tr>
-            <tr><td>10:00</td></tr>
-            <tr><td>11:00</td></tr>
-            <tr><td>12:00</td></tr>
-            </div>
+        </tbody>
         </table>
       </div>
 
